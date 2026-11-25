@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WIKI HYPE | Advanced AI HUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hud">
+    <div class="top">
+      <div>SYS: <span class="online">ONLINE</span></div>
+      <div id="clock">00:00:00</div>
+      <div class="top-btns">
+        <button id="visionbtn" class="mini-btn">VISION: OFF</button>
+        <button id="membtn" class="mini-btn">MEMORY</button>
+        <button id="clearbtn" class="mini-btn">CLEAR</button>
+      </div>
+      <div id="battery">PWR: 100%</div>
+    </div>
+
+    <div class="middle">
+      <div class="core">
+        <div class="reactor" id="reactor">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+          <button id="micbtn">ULLI</button>
+        </div>
+        <div class="visualizer" id="visualizer">
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <p id="statustext">Click ULLI for Continuous Voice | Say "Hey Wiki" or speak directly</p>
+      </div>
+
+      <div id="visionbox" class="vision-box hidden">
+        <video id="camfeed" autoplay playsinline></video>
+        <p>OPTICAL SENSOR ACTIVE</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <div id="chatlog">
+        <p class="aimsg">[WIKI HYPE]: Advanced HUD online. Created by Najeeb. Ready for voice, vision, or chat commands, Boss.</p>
+      </div>
+      <div class="inp">
+        <input type="text" id="textinput" placeholder="Chat, say 'Remember...', 'Open YouTube', or ask anything...">
+        <button id="sendbtn" class="main-btn">EXEC</button>
+        <button id="keybtn" class="main-btn">API KEY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- API Key Modal -->
+  <div id="apimodal" class="modal hidden">
+    <div class="mcontent">
+      <h3>GROQ CORE PROTOCOL</h3>
+      <p>Paste your Groq API Key below (stored locally on your device):</p>
+      <input type="password" id="apikeyinput" placeholder="gsk_...">
+      <div class="mactions">
+        <button id="savekeybtn" class="main-btn">SAVE KEY</button>
+        <button id="closemodalbtn" class="main-btn">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Memory Modal -->
+  <div id="memmodal" class="modal hidden">
+    <div class="mcontent">
+      <h3>WIKI HYPE LONG-TERM MEMORY</h3>
+      <ul id="memlist"></ul>
+      <div class="mactions">
+        <button id="clearmembtn" class="main-btn">WIPE MEMORY</button>
+        <button id="closemembtn" class="main-btn">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="snapcanvas" class="hidden"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
